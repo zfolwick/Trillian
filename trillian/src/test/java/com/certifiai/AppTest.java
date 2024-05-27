@@ -1,42 +1,44 @@
 package com.certifiai;
-package com.example;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.Assert.assertEquals;
+import java.util.List;
 
-public class SeleniumTest {
+public class AppTest {
     private WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void setUp() {
-        // Set up WebDriverManager to manage the ChromeDriver
-        WebDriverManager.chromedriver().setup();
-        // Initialize the ChromeDriver
         driver = new ChromeDriver();
+        driver.get("http://certifiai-demo.local");
     }
+
+    // @Test
+    // public void canNavigateToDemoSite() {
+    // String pageTitle = driver.getTitle();
+    // assertEquals("CertifiAI Demonstration", pageTitle);
+    // }
 
     @Test
-    public void testGoogleSearch() {
-        // Navigate to Google
-        driver.get("https://www.google.com");
-
-        // Verify the title of the page
-        String pageTitle = driver.getTitle();
-        assertEquals("Google", pageTitle);
+    public void canGetInfoForImage() {
+        List<WebElement> forms = driver.findElements(By.xpath("/html/body/center/form[1]/p[1]/input"));
+        System.out.println(forms.get(0).getText());
+        forms.get(0).click();
+        // System.out.println(forms.get(0).findElement(By.tagName("input")).getText());
     }
 
-    @After
-    public void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+    // @AfterEach
+    // public void tearDown() {
+    // // Close the browser
+    // if (driver != null) {
+    // driver.quit();
+    // }
+    // }
 }
-

@@ -16,29 +16,24 @@
 	<scope>test</scope>
     </dependency>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.8.2</version>
-        <scope>test</scope>
+	<groupId>org.junit.jupiter</groupId>
+	<artifactId>junit-jupiter-engine</artifactId>
+	<version>5.8.2</version>
+	<scope>test</scope>
     </dependency>
     <!-- Selenium Java dependency -->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>4.21.0</version> <!-- Check for the latest version -->
+        <version>4.1.0</version> <!-- Check for the latest version -->
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
-    <!-- <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-chrome-driver</artifactId>
-        <version>4.21.0</version>
-    </dependency>
     <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-remote-driver</artifactId>
-        <version>4.21.0</version>
-    </dependency> -->
+	<groupId>org.seleniumhq.selenium</groupId>
+	<artifactId>selenium-chrome-driver</artifactId>
+	<version>4.21.0</version>
+    </dependency>
 
     <!-- WebDriverManager dependenc
     <dependency>
